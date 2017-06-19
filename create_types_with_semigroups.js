@@ -4,6 +4,7 @@ const {Map, List} = require('immutable-ext')
 // const res = [1,2].concat([3,4].concat([5,6]))
 // semigroups from maths => associativity 
 
+// Monoid 
 const Sum = x => 
 ({
     x,
@@ -11,9 +12,9 @@ const Sum = x =>
         Sum(x + y),
     inspect: () => `Sum(${x})`
 })
-
 Sum.empty = () => Sum(0)
 
+// Monoid 
 const All = x => 
 ({
     x,
@@ -21,7 +22,6 @@ const All = x =>
         All(x && y),
     inspect: () => `Sum(${x})`
 })
-
 All.empty = () => All(true)
 
 const First = x => 
